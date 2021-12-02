@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Landing-page {
+  border: 2px solid green;
+  margin: 2em;
+  display: flex;
+  padding-bottom: 3em;
+}
