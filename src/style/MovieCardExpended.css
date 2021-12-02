@@ -1,27 +1,24 @@
 .MovieCardExpended {
-  margin: 1em;
-  /* width: 100%; */
-  height: 90%;
-  border: 2px solid red;
-  padding: 0;
-  margin-bottom: 1em;
 }
 .MovieCardExpended-container {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.MovieCardExpended-image {
-  position: absolute;
-  right: 3em;
-  left: 5em;
-  padding: 0;
-  margin: 0;
-
-  object-fit: fill;
-  object-position: center;
+  position: fixed;
+  background-color: turquoise;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50em;
   z-index: 100;
+  border: 3px solid yellow;
+  height: 50vw;
+}
+.MovieCardExpended-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 1.5em;
+}
+.MovieCardExpended-image {
+  /* height: 150%; */
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
 }

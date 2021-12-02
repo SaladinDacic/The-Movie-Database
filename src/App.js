@@ -1,9 +1,12 @@
 import Landing from "./Landing";
+import { MethodsProvider } from "./contexts/MethodsContext";
 
 function App() {
   return (
     <div className="App">
-      <Landing/>
+      <MethodsProvider>
+        <Landing/>
+      </MethodsProvider>
     </div>
   );
 }

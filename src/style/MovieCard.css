@@ -17,3 +17,6 @@
 .blur {
   filter: blur(7px);
 }
+.tint {
+  filter: blur(20px);
+}
