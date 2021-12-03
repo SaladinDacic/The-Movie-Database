@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { MethodContext } from './contexts/MethodsContext'
 
 function SearchForm() {
+  const {linkRef} = useContext(MethodContext)
+  let search = "Search film"
+  if(linkRef.current==="tvshows") search = "Search series"
   return (
     <div>
-      <h4>Search film</h4>
+      <h4>{search}</h4>
       <input/>
     </div>
   )

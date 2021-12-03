@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { MethodContext } from "./contexts/MethodsContext";
 import ListMovies from "./ListMovies";
 import MovieCardExpended from "./MovieCardExpended";
 import SearchForm from "./SearchForm";
+import {Link} from "react-router-dom"; 
 import "./style/Landing.css"
-function Landing() {
+function Landing({match}) {
   const {movies, cardClicked} = useContext(MethodContext)
   let renderExpCard;
   try{
@@ -14,9 +15,14 @@ function Landing() {
       renderExpCard = null
     }
   }catch(e){}
+
+  
   return (
     <div className="Landing-page">
       <div className="Landing-page-header">
+
+        <Link to="movies">movies</Link>
+        <Link to="tvshows">tvshows</Link>
         <SearchForm/>
       </div>
       <div className="Landing-page-cover">
