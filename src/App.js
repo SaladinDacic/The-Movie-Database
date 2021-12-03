@@ -1,12 +1,11 @@
-import Landing from "./Landing";
-import { MethodsProvider } from "./contexts/MethodsContext";
+import "./style/App.css"
 import { Route, Redirect, Switch} from "react-router-dom"; 
 import MovieDiv from "./MovieDiv";
 import TvShowDiv from "./TvShowDiv";
 function App() {
   return (
-    <div>
-        <Switch className="App">
+    <div className="App">
+        <Switch >
           <Route exact path="/movies" render={(props)=>(
             <MovieDiv props={props}/>
           )}/>

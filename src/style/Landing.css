@@ -5,15 +5,44 @@
 .Landing-page {
   display: flex;
   flex-direction: column;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
   justify-content: center;
   align-items: center;
   padding-top: 2em;
 }
+
+.Landing-page-header {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid purple; */
+  width: 92vw;
+}
+.Landing-page-header div {
+  display: flex;
+  justify-content: space-around;
+  /* border: 2px solid darkslategray; */
+  width: 15vw;
+}
+
 .Landing-page-cover {
   border: 2px solid green;
   margin: 2em;
   display: flex;
   padding-bottom: 3em;
   position: relative;
+}
+
+.inactive {
+  font-size: 1.3em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.644);
+  border-bottom: 3px solid rgb(24, 34, 44);
+  border-radius: 10%;
+}
+.active {
+  font-size: 1.3em;
+  text-decoration: none;
+  color: white;
+  border-bottom: 3px solid rgb(31, 105, 111);
+  border-radius: 10%;
 }

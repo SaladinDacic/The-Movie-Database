@@ -3,26 +3,29 @@ import { MethodContext } from "./contexts/MethodsContext";
 import ListMovies from "./ListMovies";
 import MovieCardExpended from "./MovieCardExpended";
 import SearchForm from "./SearchForm";
-import {Link} from "react-router-dom"; 
+import {NavLink} from "react-router-dom"; 
 import "./style/Landing.css"
-function Landing({match}) {
+function Landing() {
   const {movies, cardClicked} = useContext(MethodContext)
   let renderExpCard;
   try{
     if(cardClicked!==undefined && movies !== undefined){
-      renderExpCard = <MovieCardExpended  imageLink={`https://www.themoviedb.org/t/p/original${movies[cardClicked].backdrop_path}`}/>
+      let url = `https://www.themoviedb.org/t/p/original${movies[cardClicked].backdrop_path}`
+      renderExpCard = <MovieCardExpended  imageNavLink={url}/>
     }else{
       renderExpCard = null
     }
   }catch(e){}
 
-  
+
   return (
     <div className="Landing-page">
       <div className="Landing-page-header">
-
-        <Link to="movies">movies</Link>
-        <Link to="tvshows">tvshows</Link>
+        <div>
+          <NavLink className={(props)=>{return props?"active":"inactive"}} to="tvshows">TV Shows </NavLink>
+          <NavLink className={(props)=>{return props?"active":"inactive"}} to="movies">Movies</NavLink>
+        </div>
+        
         <SearchForm/>
       </div>
       <div className="Landing-page-cover">

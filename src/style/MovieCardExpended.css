@@ -2,14 +2,16 @@
 }
 .MovieCardExpended-container {
   position: fixed;
-  background-color: turquoise;
+  background-color: rgb(29, 37, 48);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50em;
   z-index: 100;
-  border: 3px solid yellow;
-  height: 50vw;
+  box-shadow: 0px 0px 35px 21px rgb(19, 25, 32);
+  border-radius: 5px;
+  height: 75vh;
+  color: rgba(255, 255, 255, 0.644);
 }
 .MovieCardExpended-header {
   display: flex;
@@ -21,4 +23,36 @@
   width: 100%;
   object-fit: contain;
   object-position: center;
+}
+
+@media screen and (max-width: 900px) {
+  .MovieCardExpended-container {
+    width: 92vw;
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 800px) {
+  .MovieCardExpended-container {
+    height: 65vh;
+  }
+}
+@media screen and (max-width: 650px) {
+  .MovieCardExpended-container {
+    height: 60vh;
+  }
+}
+@media screen and (max-width: 570px) {
+  .MovieCardExpended-container {
+    height: 55vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .MovieCardExpended-container {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .MovieCardExpended-container {
+    height: 45vh;
+  }
 }

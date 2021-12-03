@@ -1,0 +1,17 @@
+.SearchForm {
+  transform: translateX(-2vw);
+  height: 1em;
+  color: rgba(255, 255, 255, 0.644);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.SearchForm input {
+  border-radius: 25px;
+  background-color: rgb(23, 27, 36);
+  color: white;
+  text-indent: 20px;
+}

@@ -1,12 +1,13 @@
 import React, {useContext} from 'react'
-import { MethodContext } from './contexts/MethodsContext'
+import { MethodContext } from './contexts/MethodsContext';
+import "./style/SearchForm.css"
 
 function SearchForm() {
   const {linkRef} = useContext(MethodContext)
-  let search = "Search film"
-  if(linkRef.current==="tvshows") search = "Search series"
+  let search = "Search Movie"
+  if(linkRef.current==="tvshows") search = "Search TV Show"
   return (
-    <div>
+    <div className="SearchForm">
       <h4>{search}</h4>
       <input/>
     </div>
