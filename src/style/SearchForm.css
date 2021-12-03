@@ -1,12 +1,14 @@
 .SearchForm {
   transform: translateX(-2vw);
-  height: 1em;
+  height: 2em;
   color: rgba(255, 255, 255, 0.644);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.3em;
+  /* border: 2px solid green; */
+  /* width: 12em; */
 }
 
 .SearchForm input {
@@ -14,4 +16,15 @@
   background-color: rgb(23, 27, 36);
   color: white;
   text-indent: 20px;
+}
+
+.SearchForm-inputAndIcon {
+  display: flex;
+  flex-direction: row !important;
+  transform: translateX(0.6em);
+  width: 10em !important;
+}
+.SearchForm-inputAndIcon i {
+  cursor: pointer;
+  font-size: 1.3em;
 }

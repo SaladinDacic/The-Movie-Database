@@ -21,11 +21,16 @@
   display: flex;
   justify-content: space-around;
   /* border: 2px solid darkslategray; */
-  width: 15vw;
+  height: 1.8em;
+  width: 16em;
 }
-
+@media screen and (max-width: 415px) {
+  .Landing-page-header div {
+    flex-direction: column;
+  }
+}
 .Landing-page-cover {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin: 2em;
   display: flex;
   padding-bottom: 3em;
