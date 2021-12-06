@@ -4,6 +4,46 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   margin: auto;
 }
+.ListMovies-missing {
+  color: rgba(255, 255, 255, 0.644);
+  width: 4em;
+  /* border: 2px solid red; */
+}
+.ListMovies-loading {
+  border: 12px solid gray;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-color: #b8b894;
+  border-top-color: #99ff33;
+  border-bottom-color: #00ccff;
+
+  border-radius: 50%;
+  animation: rotateIt 2.5s infinite cubic-bezier(0.42, -0.6, 0.67, 1.61);
+}
+
+@keyframes rotateIt {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    border-top-color: #800000;
+    border-bottom-color: #800000;
+  }
+  100% {
+    transform: rotate(718deg);
+  }
+}
+
+@keyframes itNeverLoads {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .ListMovies {
     grid-template-columns: 25% 25% 25% 25%;

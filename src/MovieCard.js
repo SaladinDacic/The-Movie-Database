@@ -1,17 +1,13 @@
-import React, {useState, useEffect, useRef, useContext} from 'react'
+import React, {useContext} from 'react'
 import { MethodContext } from './contexts/MethodsContext'
 import "./style/MovieCard.css"
 
-function MovieCard({imageLink, num, tint}) {
-  const {setCardClicked, blurImgIdx} = useContext(MethodContext)
-  const blurImgIdx2 = useRef(blurImgIdx.current)
-  const [blur, setBlur] = useState(false)
-  useEffect(() => {
-    if(blurImgIdx2.current.find(val=>val===num)!==undefined)setBlur(true)
-  }, [num])
+function MovieCard({imageLink, num, movie}) {
+  const {setCardClicked} = useContext(MethodContext)
+
   return (
     <div onClick={()=>{setCardClicked(num)}} className="MovieCard">
-      <img alt="movie" src={imageLink} className={`MovieCard-image ${blur?"blur":null} ${tint?"tint":null}`}/>
+      <img alt="movie" src={imageLink} className={`MovieCard-image ${movie.blur?"blur":null}`}/>
     </div>
   )
 }

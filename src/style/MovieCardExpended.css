@@ -16,7 +16,7 @@
 .MovieCardExpended-header {
   display: flex;
   justify-content: space-between;
-  margin: 1em 1.5em;
+  margin: 0em 1.5em 1em 0;
 }
 .MovieCardExpended-image {
   /* height: 150%; */
@@ -28,10 +28,11 @@
 @media screen and (max-width: 900px) {
   .MovieCardExpended-container {
     width: 92vw;
-    height: 70vh;
+    height: fit-content;
+    padding: 1em 0;
   }
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .MovieCardExpended-container {
     height: 65vh;
   }
@@ -55,4 +56,4 @@
   .MovieCardExpended-container {
     height: 45vh;
   }
-}
+} */
