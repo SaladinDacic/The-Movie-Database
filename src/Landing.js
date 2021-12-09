@@ -1,17 +1,14 @@
-import { useContext} from "react";
-import { MethodContext } from "./contexts/MethodsContext";
 import ListMovies from "./ListMovies";
 import MovieCardExpended from "./MovieCardExpended";
 import SearchForm from "./SearchForm";
 import {NavLink} from "react-router-dom"; 
 import "./style/Landing.css"
-function Landing() {
-  const {movies, cardClicked} = useContext(MethodContext)
+function Landing({movies, cardClicked, setCardClicked, searchFilter, linkRef}) {
   let renderExpCard;
   try{
     if(cardClicked!==undefined && movies !== undefined){
       let url = `https://www.themoviedb.org/t/p/original${movies[cardClicked].backdrop_path}`
-      renderExpCard = <MovieCardExpended  imageNavLink={url}/>
+      renderExpCard = <MovieCardExpended setCardClicked={setCardClicked} cardClicked={cardClicked} imageNavLink={url}/>
     }else{
       renderExpCard = null
     }
@@ -26,11 +23,11 @@ function Landing() {
           <NavLink className={(props)=>{return props?"active":"inactive"}} to="movies">Movies</NavLink>
         </div>
         
-        <SearchForm/>
+        <SearchForm searchFilter={searchFilter} linkRef={linkRef}/>
       </div>
       <div className="Landing-page-cover">
         {renderExpCard}
-        <ListMovies/>
+        <ListMovies movies={movies} setCardClicked={setCardClicked}/>
       </div>
     </div>
   )

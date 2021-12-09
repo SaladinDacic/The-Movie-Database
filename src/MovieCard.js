@@ -1,9 +1,6 @@
-import React, {useContext} from 'react'
-import { MethodContext } from './contexts/MethodsContext'
 import "./style/MovieCard.css"
 
-function MovieCard({imageLink, num, movie}) {
-  const {setCardClicked} = useContext(MethodContext)
+function MovieCard({imageLink, num, movie, setCardClicked}) {
 
   return (
     <div onClick={()=>{setCardClicked(num)}} className="MovieCard">

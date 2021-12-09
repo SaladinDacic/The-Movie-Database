@@ -1,13 +1,11 @@
-import React, {useContext, useState, useEffect} from 'react'
-import { MethodContext } from './contexts/MethodsContext';
+import React, {useState, useEffect} from 'react'
 import "./style/SearchForm.css"
 
 
-function SearchForm() {
-  const {linkRef, searchFilter} = useContext(MethodContext)
+function SearchForm({searchFilter, linkRef}) {
   const [searchInput, setSearchInput] = useState("")
   let search = "Search Movie"
-  if(linkRef.current==="tvshows") search = "Search TV Show"
+  if(linkRef==="tvshows") search = "Search TV Show"
 
   const handleChange=(evt)=>{
     const inputedText = evt.target.value
@@ -23,7 +21,8 @@ function SearchForm() {
     
   }
   useEffect(() => {
-    setSearchInput(window.localStorage.getItem("searchInput"))
+    setSearchInput(window.localStorage.getItem("searchInput"));
+    searchFilter(window.localStorage.getItem("searchInput"));
   },[])
 
   return (

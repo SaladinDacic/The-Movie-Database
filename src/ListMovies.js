@@ -1,12 +1,9 @@
-import React, {useContext} from 'react'
-import { MethodContext } from './contexts/MethodsContext'
 import MovieCard from './MovieCard'
 import "./style/ListMovies.css"
 
-function ListMovies() {
-  const {movies, cardClicked} = useContext(MethodContext)
+function ListMovies({movies, setCardClicked}) {
   const renderImages = movies.map((movie, i)=>{
-      return <MovieCard tint={cardClicked===i?"tint":null} movie={movies[i]} num={i} key={i} imageLink={`https://www.themoviedb.org/t/p/original${movie.poster_path}`}/>
+      return <MovieCard setCardClicked={setCardClicked} movie={movies[i]} num={i} key={i} imageLink={`https://www.themoviedb.org/t/p/original${movie.poster_path}`}/>
   })
   
   return (
